@@ -1,0 +1,92 @@
+[
+    {
+        "reviewId": "12345",
+        "gameTitle": "The Last of Us Part II",
+        "gameCover": "https://i.ibb.co.com/6JchQmQ1/show.jpg",
+        "reviewDescription": "The Last of Us Part II offers an intense, emotionally charged experience with stunning graphics and a captivating storyline.",
+        "rating": 9,
+        "publishingYear": 2020,
+        "genres": [
+            "Action",
+            "Adventure"
+        ],
+        "userEmail": "john.doe@example.com",
+        "userName": "John Doe",
+        "createdAt": "2025-02-10T10:30:00Z"
+    },
+    {
+        "reviewId": "12346",
+        "gameTitle": "Cyberpunk 2077",
+        "gameCover": "https://i.ibb.co.com/KzKJyRfd/Cyberpunk2077-Phantom-Liberty-Ultimate-Edition-Keyart.webp",
+        "reviewDescription": "Despite its rocky launch, Cyberpunk 2077 has a fantastic open world and deep narrative that makes it a must-play for fans of sci-fi RPGs.",
+        "rating": 8,
+        "publishingYear": 2020,
+        "genres": [
+            "RPG",
+            "Action"
+        ],
+        "userEmail": "jane.doe@example.com",
+        "userName": "Jane Doe",
+        "createdAt": "2025-02-10T11:00:00Z"
+    },
+    {
+        "reviewId": "12347",
+        "gameTitle": "The Witcher 3: Wild Hunt",
+        "gameCover": "https://i.ibb.co.com/5hYfkGM9/326d245efb39160ec86f1f48f7808179033b0d1ddef655b85510eb993c1ec1dd-1.jpg",
+        "reviewDescription": "An epic RPG with an amazing story, world-building, and combat system. The Witcher 3 is a timeless classic for RPG lovers.",
+        "rating": 10,
+        "publishingYear": 2015,
+        "genres": [
+            "RPG",
+            "Adventure"
+        ],
+        "userEmail": "alex.smith@example.com",
+        "userName": "Alex Smith",
+        "createdAt": "2025-02-10T11:30:00Z"
+    },
+    {
+        "reviewId": "12348",
+        "gameTitle": "Red Dead Redemption 2",
+        "gameCover": "https://i.ibb.co.com/0p7HGJ59/Red-Dead-Redemption-2-PC-review-1024x576.jpg",
+        "reviewDescription": "A masterclass in open-world design and storytelling. Red Dead Redemption 2 is one of the best games of the generation.",
+        "rating": 9.5,
+        "publishingYear": 2018,
+        "genres": [
+            "Action",
+            "Adventure"
+        ],
+        "userEmail": "mike.jones@example.com",
+        "userName": "Mike Jones",
+        "createdAt": "2025-02-10T12:00:00Z"
+    },
+    {
+        "reviewId": "12349",
+        "gameTitle": "Minecraft",
+        "gameCover": "https://i.ibb.co.com/4nL0jhXP/minicraft.jpg",
+        "reviewDescription": "Minecraft is the ultimate sandbox game, with endless possibilities for building, exploring, and creating your own worlds.",
+        "rating": 8.5,
+        "publishingYear": 2011,
+        "genres": [
+            "Sandbox",
+            "Survival"
+        ],
+        "userEmail": "lucy.brown@example.com",
+        "userName": "Lucy Brown",
+        "createdAt": "2025-02-10T12:30:00Z"
+    },
+    {
+        "reviewId": "12350",
+        "gameTitle": "Fortnite",
+        "gameCover": "https://i.ibb.co.com/QWH1Bp5/FortNite.jpg",
+        "reviewDescription": "Fortnite revolutionized the battle royale genre with its fun gameplay, frequent updates, and vibrant world. It's a cultural phenomenon.",
+        "rating": 7.5,
+        "publishingYear": 2017,
+        "genres": [
+            "Battle Royale",
+            "Action"
+        ],
+        "userEmail": "sam.wilson@example.com",
+        "userName": "Sam Wilson",
+        "createdAt": "2025-02-10T13:00:00Z"
+    }
+]
