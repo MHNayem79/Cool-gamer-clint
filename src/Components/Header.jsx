@@ -1,14 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Header = () => {
+    const navigate = useNavigate();
+    const { user, signOutUser } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                console.log("Sign Out Successfully")
+                navigate("/")
+            })
+            .catch(error => {
+                console.log("ERROR", error.message)
+            })
+    }
 
     const link = <div className="space-x-5">
-        <NavLink to="/"><a>Home</a></NavLink>
-        <NavLink to="/allReviews"><a>All Reviews</a></NavLink>
-        <NavLink to="/addReview"><a>Add Review</a></NavLink>
-        <NavLink to="/myReviews"><a>My Reviews</a></NavLink>
-        <NavLink to="/gameWishlist"><a>Game WishList</a></NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/allReviews">All Reviews</NavLink>
+        {
+            user && <>
+                <NavLink to="/addReview">Add Review</NavLink>
+                <NavLink to="/myReviews">My Reviews</NavLink>
+                <NavLink to="/gameWishlist">Game WishList</NavLink>
+            </>
+        }
     </div>
     return (
         <div className="navbar bg-base-100">
@@ -42,8 +61,19 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLink to="/login" className="btn"> <a>Login</a> </NavLink>
-                <NavLink to="/register" className="btn"> <a>Register</a> </NavLink>
+                {
+                    user ?
+                        <>
+                            <img className="mr-3 w-[50px] rounded-full" title={user?.email} src={user?.photoURL} alt="photo" />
+                            <button onClick={handleSignOut} className="btn">SignOut</button>
+                        </>
+                        :
+                        <>
+                            <NavLink to="/login" className="btn"> <button>login</button> </NavLink>
+                            <NavLink to="/register" className="btn"> <button>Register</button> </NavLink>
+                        </>
+                }
+
             </div>
         </div>
     );

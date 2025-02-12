@@ -14,6 +14,9 @@ import MyReviews from './Components/MyReviews.jsx';
 import GameWishList from './Components/GameWishList.jsx';
 import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
+import AuthProvider from './Provider/AuthProvider.jsx';
+import Details from './Components/Details.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,19 +29,21 @@ const router = createBrowserRouter([
       },
       {
         path: 'allReviews',
-        element: <AllReviews></AllReviews>
+        element: <AllReviews></AllReviews>,
+        loader: () => fetch("http://localhost:5000/addReview")
       },
       {
         path: 'addReview',
-        element: <AddReview></AddReview>
+        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
       },
       {
         path: 'myReviews',
-        element: <MyReviews></MyReviews>
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
       },
       {
         path: 'gameWishList',
-        element: <GameWishList></GameWishList>
+        element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>,
+        loader: () => fetch("http://localhost:5000/gameWishList")
       },
       {
         path: 'login',
@@ -48,12 +53,19 @@ const router = createBrowserRouter([
         path: 'register',
         element: <Register></Register>
       },
+      {
+        path: 'review/:id',
+        element: <Details></Details>,
+        loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+      },
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
