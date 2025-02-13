@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyReviews = () => {
-    const reviews = useLoaderData();
+    const loadedReviews = useLoaderData();
+    const [reviews, setReviews] = useState(loadedReviews);
+
+
 
     const handleDelete = _id => {
         console.log(_id)
@@ -32,6 +36,8 @@ const MyReviews = () => {
                                 text: "Your review has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = reviews.filter(review => review._id !== _id)
+                            setReviews(remaining)
                         }
                     })
             }
@@ -41,7 +47,7 @@ const MyReviews = () => {
         <div className="my-10 space-y-10">
             {
                 reviews.map(singleWishlist =>
-                    <div key={singleWishlist._id} className="overflow-x-auto">
+                    <div  key={singleWishlist._id} className="overflow-x-auto">
                         <table className="table">
                             {/* head */}
                             <thead>
@@ -87,7 +93,7 @@ const MyReviews = () => {
                                     <div className="join join-vertical">
                                         <Link to={`/updateReview/${singleWishlist._id}`}><button className="btn join-item">Update</button></Link>
                                         <button onClick={() => handleDelete(singleWishlist._id)} className="btn join-item">Delete</button>
-                                        
+
                                     </div>
                                 </tr>
 
