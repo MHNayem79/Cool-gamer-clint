@@ -6,8 +6,9 @@ import { useLoaderData } from "react-router-dom";
 
 const UpdateReview = () => {
     const data=useLoaderData();
-    const {_id,rating,published,photo,name,genres,gameTitle,email,description}=data
+    const {_id,rating,published,photo,genres,gameTitle,description}=data
     const { user } = useContext(AuthContext)
+    // eslint-disable-next-line no-unused-vars
     const [selected, setSelected] = useState("");
     const handleUpdateReview = e => {
         e.preventDefault();

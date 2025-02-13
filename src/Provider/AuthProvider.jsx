@@ -4,6 +4,7 @@ import { auth } from '../Firebase/Firebase.init';
 
 export const AuthContext = createContext(null)
 
+// eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
 
 

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const Register = () => {
 
     const { createUser, googleUser } = useContext(AuthContext)
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState([])
     const navigate = useNavigate("/")
 

@@ -8,6 +8,7 @@ const Login = () => {
 
     const { googleUser } = useContext(AuthContext)
     const { signInUser } = useContext(AuthContext)
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState('');
     const navigate = useNavigate();
 

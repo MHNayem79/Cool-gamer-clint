@@ -117,7 +117,7 @@ const Home = () => {
                 ⭐ Community Ratings – See how other gamers rate and review games before you decide to play. <br />
                 🔍 Easy Discovery – Find games based on genre, rating, and user recommendations. <br />
                 <Fade>
-                    📝 Share Your Experience – Whether you're a casual player or a hardcore gamer, your voice matters!
+                    📝 Share Your Experience – Whether you are a casual player or a hardcore gamer, your voice matters!
                 </Fade>
                 <Typewriter words={['Join us in building a community-driven platform where every review helps shape a better gaming world!']}></Typewriter>
             </p>
