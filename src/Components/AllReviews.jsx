@@ -70,7 +70,7 @@ const AllReviews = () => {
                             <p>Genres: {review.genres}</p>
                             <p>Published: {review.published}</p>
                             <p>Rating: {review.rating}</p>
-                            <div className="card-actions justify-end">
+                            <div className="card-actions mr-10">
                                 <NavLink to={`/review/${review._id}`} className="btn btn-primary">
                                     Explore Details
                                 </NavLink>

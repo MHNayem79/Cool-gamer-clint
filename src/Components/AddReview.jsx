@@ -41,10 +41,10 @@ const AddReview = () => {
         })
     }
     return (
-        <div className="bg-gray-200 m-20">
+        <div className="bg-gray-200 md:m-20">
             <h2 className="text-center text-4xl font-bold mx-auto py-10">Add A Review</h2>
             <form onSubmit={handleAddReview}>
-                <div className="flex justify-center gap-10 mx-10 pb-10">
+                <div className="md:flex justify-center gap-10 mx-10 pb-10">
                     <label className="input input-bordered flex items-center gap-2 md:w-1/2">
                         User Name
                         <input type="text"
@@ -64,7 +64,7 @@ const AddReview = () => {
                             placeholder="Email" />
                     </label>
                 </div>
-                <div className="flex justify-center gap-10 mx-10 pb-10">
+                <div className="md:flex justify-center gap-10 mx-10 pb-10">
                     <label className="input input-bordered flex items-center gap-2 md:w-1/2">
                         Game Cover URL
                         <input type="text"
@@ -80,7 +80,7 @@ const AddReview = () => {
                             placeholder="Game Title" />
                     </label>
                 </div>
-                <div className="flex justify-center gap-10 mx-10 pb-10">
+                <div className="md:flex justify-center gap-10 mx-10 pb-10">
                     <label className="input input-bordered flex items-center gap-2 md:w-1/2">
                         Review Description
                         <input type="text"
@@ -96,7 +96,7 @@ const AddReview = () => {
                             placeholder="Rating" />
                     </label>
                 </div>
-                <div className="flex justify-center items-center gap-10 mx-10 pb-10">
+                <div className="md:flex justify-center items-center gap-10 mx-10 pb-10">
                     <label className="input input-bordered flex items-center gap-2 md:w-1/2">
                         Publishing year
                         <input type="text"

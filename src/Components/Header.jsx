@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { NavLink, useLoaderData, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Typewriter } from "react-simple-typewriter";
 
 
 const Header = () => {
@@ -56,7 +55,7 @@ const Header = () => {
                         {link}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"> <Typewriter>Chill Gamer</Typewriter> </a>
+                <a className="btn btn-ghost text-xl">Chill Gamer</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

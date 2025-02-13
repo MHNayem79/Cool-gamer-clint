@@ -71,7 +71,7 @@ const Home = () => {
                 {
                     reviews.map(review =>
                         <div key={review._id} className="my-10">
-                            <div className="card card-side bg-base-100 shadow-xl">
+                            <div className="card card-side bg-base-100 text-gray-700 shadow-xl">
                                 <figure>
                                     <img
                                         className="w-[500px]"
@@ -94,12 +94,12 @@ const Home = () => {
 
             <h2 className='font-bold text-4xl text-center mx-auto my-10'>Most Rated Gaming Overview</h2>
 
-            <iframe className='mx-auto my-10' width="1280" height="720" src="https://www.youtube.com/embed/c0i88t0Kacs?si=I6pPkjmL_aCgMAl9" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe className='mx-auto w-full my-10' width="1280" height="720" src="https://www.youtube.com/embed/c0i88t0Kacs?si=I6pPkjmL_aCgMAl9" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <h2 className='font-bold text-4xl text-center mx-auto my-10'>About Our Platform</h2>
+            <h2 className='font-bold text-4xl text-center mx-auto mt-20 my-10'>About Our Platform</h2>
 
 
-            <p className='mx-40 text-xl text-center font-bold my-20'>
+            <p className='lg:mx-40 text-xl text-center font-bold py-20'>
                 Welcome to Chill Gamers, a dedicated platform for gamers who love to explore and share in-depth game reviews. Our mission is to create a space where players can express their honest opinions, provide detailed insights, and help others discover the best gaming experiences.
                 <br />
                 What We Offer: <br />

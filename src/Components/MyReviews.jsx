@@ -47,14 +47,15 @@ const MyReviews = () => {
         <div className="my-10 space-y-10">
             {
                 reviews.map(singleWishlist =>
-                    <div  key={singleWishlist._id} className="overflow-x-auto">
+                    <div key={singleWishlist._id} className="overflow-x-auto">
                         <table className="table">
                             {/* head */}
                             <thead>
                                 <tr>
 
                                     <th>Rated by</th>
-                                    <th>GameTitle & description</th>
+                                    <th>GameTitle </th>
+                                    <th>description </th>
                                     <th>Rating,Published,Genres</th>
                                     <th></th>
                                 </tr>
@@ -79,8 +80,9 @@ const MyReviews = () => {
                                     </td>
                                     <td>
                                         {singleWishlist.gameTitle}
-                                        <br />
-                                        <span className="badge badge-ghost badge-sm">{singleWishlist.description}</span>
+                                    </td>
+                                    <td>
+                                        {singleWishlist.description}
                                     </td>
                                     <td>
                                         Ratings :  {singleWishlist.rating}
