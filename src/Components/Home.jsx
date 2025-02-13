@@ -1,14 +1,30 @@
 import banner1 from '../assets/The-Last-of-Us-Part-Two-Banner-1536x864.png'
 import banner2 from '../assets/Red-Dead-Redemption-2-PC-review-1024x576.jpg'
 import { NavLink, useLoaderData } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
 
     const reviews = useLoaderData()
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    useEffect(() => {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
 
 
     return (
-        <div>
+        <div className={theme === 'dark' ? 'dark bg-gray-900 text-white' : 'bg-white text-black'}>
+            <div className="flex justify-end p-4">
+                <button onClick={toggleTheme} className="px-4 py-2 bg-gray-800 text-white rounded dark:bg-gray-300 dark:text-black">
+                    {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                </button>
+            </div>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img
@@ -65,8 +81,8 @@ const Home = () => {
                                     <p>Genres : {review.genres}</p>
                                     <p className='text-3xl font-bold'>Ratings : {review.rating}/10</p>
                                     <div className="card-actions justify-end">
-                                    <NavLink to={`/review/${review._id}`} className="btn btn-primary">Explore Details</NavLink>
-                                </div>
+                                        <NavLink to={`/review/${review._id}`} className="btn btn-primary">Explore Details</NavLink>
+                                    </div>
                                 </div>
                             </div>
                         </div>
