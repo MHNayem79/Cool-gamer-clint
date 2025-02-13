@@ -21,7 +21,7 @@ const Details = () => {
         const detailsCollections = { userName, userEmail, name, email, photo, gameTitle, description, rating, published, genres }
         console.log(detailsCollections);
 
-        fetch(`http://localhost:5000/review/${_id}`, {
+        fetch(`https://chill-gamer-server-tawny.vercel.app/review/${_id}`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

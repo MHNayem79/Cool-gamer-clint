@@ -24,7 +24,7 @@ const UpdateReview = () => {
         console.log(UpdatedReviews);
 
         // send data to the server
-        fetch(`http://localhost:5000/updateReview/${_id}`, {
+        fetch(`https://chill-gamer-server-tawny.vercel.app/updateReview/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

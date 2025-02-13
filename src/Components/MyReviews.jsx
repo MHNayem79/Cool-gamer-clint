@@ -24,7 +24,7 @@ const MyReviews = () => {
 
                 console.log("delete Confirm")
 
-                fetch(`http://localhost:5000/myReviews/${_id}`, {
+                fetch(`https://chill-gamer-server-tawny.vercel.app/myReviews/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

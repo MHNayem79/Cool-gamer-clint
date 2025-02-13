@@ -21,7 +21,7 @@ const AddReview = () => {
         console.log(addedReviews);
 
         // send data to the server
-        fetch('http://localhost:5000/addReview',{
+        fetch('https://chill-gamer-server-tawny.vercel.app/addReview',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

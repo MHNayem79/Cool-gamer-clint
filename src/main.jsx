@@ -29,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/highest")
+        loader: () => fetch("https://chill-gamer-server-tawny.vercel.app/highest")
       },
       {
         path: 'allReviews',
         element: <AllReviews></AllReviews>,
-        loader: () => fetch("http://localhost:5000/addReview")
+        loader: () => fetch("https://chill-gamer-server-tawny.vercel.app/addReview")
       },
       {
         path: 'addReview',
@@ -43,17 +43,17 @@ const router = createBrowserRouter([
       {
         path: 'myReviews/:email',
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/myReviews/${params.email}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-server-tawny.vercel.app/myReviews/${params.email}`)
       },
       {
         path: 'updateReview/:id',
         element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/updateReview/${params.id}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-server-tawny.vercel.app/updateReview/${params.id}`)
       },
       {
         path: '/gameWishList/:userEmail',
         element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/gameWishList/${params.userEmail}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-server-tawny.vercel.app/gameWishList/${params.userEmail}`)
       },
       {
         path: 'login',
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       {
         path: 'review/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-server-tawny.vercel.app/review/${params.id}`)
       },
     ]
   },
