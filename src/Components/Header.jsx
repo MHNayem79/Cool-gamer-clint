@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLoaderData, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Header = () => {
     const navigate = useNavigate();
     const { user, signOutUser } = useContext(AuthContext)
+    const data = useLoaderData()
+    console.log(data)
 
     const handleSignOut = () => {
         signOutUser()
@@ -24,8 +26,8 @@ const Header = () => {
         {
             user && <>
                 <NavLink to="/addReview">Add Review</NavLink>
-                <NavLink to="/myReviews">My Reviews</NavLink>
-                <NavLink to="/gameWishlist">Game WishList</NavLink>
+                <NavLink to={`/myReviews/${user?.email}`}>My Reviews</NavLink>
+                <NavLink to={`/gameWishlist/${user?.email}`}>Game WishList</NavLink>
             </>
         }
     </div>

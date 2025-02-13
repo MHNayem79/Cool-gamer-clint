@@ -17,16 +17,18 @@ import Register from './Components/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Details from './Components/Details.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import Errortext from './Components/Errortext.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Errortext></Errortext>,
     children: [
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addReview")
+        loader: () => fetch("http://localhost:5000/highest")
       },
       {
         path: 'allReviews',
@@ -38,13 +40,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
       },
       {
-        path: 'myReviews',
-        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+        path: 'myReviews/:email',
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/myReviews/${params.email}`)
       },
       {
-        path: 'gameWishList',
+        path: '/gameWishList/:userEmail',
         element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/gameWishList")
+        loader: ({ params }) => fetch(`http://localhost:5000/gameWishList/${params.userEmail}`)
       },
       {
         path: 'login',

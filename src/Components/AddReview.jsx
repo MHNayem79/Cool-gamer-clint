@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const AddReview = () => {
+    const{user}=useContext(AuthContext)
     const [selected, setSelected] = useState("");
     const handleAddReview=e=>{
         e.preventDefault();
@@ -47,6 +49,8 @@ const AddReview = () => {
                         User Name
                         <input type="text"
                             name="name"
+                            defaultValue={user?.displayName}
+                            readOnly
                             className="grow"
                             placeholder="Name" />
                     </label>
@@ -54,6 +58,8 @@ const AddReview = () => {
                         User Email
                         <input type="text"
                             name="email"
+                            defaultValue={user?.email}
+                            readOnly
                             className="grow"
                             placeholder="Email" />
                     </label>

@@ -64,6 +64,9 @@ const Home = () => {
                                     <h2 className="card-title">{review.gameTitle}</h2>
                                     <p>Genres : {review.genres}</p>
                                     <p className='text-3xl font-bold'>Ratings : {review.rating}/10</p>
+                                    <div className="card-actions justify-end">
+                                    <NavLink to={`/review/${review._id}`} className="btn btn-primary">Explore Details</NavLink>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +74,7 @@ const Home = () => {
                 }
             </div>
 
-            <h2 className='font-bold text-4xl text-center mx-auto my-10'>Most Popular Gaming Overview</h2>
+            <h2 className='font-bold text-4xl text-center mx-auto my-10'>Most Rated Gaming Overview</h2>
 
             <iframe className='mx-auto my-10' width="1280" height="720" src="https://www.youtube.com/embed/c0i88t0Kacs?si=I6pPkjmL_aCgMAl9" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

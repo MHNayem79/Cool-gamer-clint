@@ -1,8 +1,9 @@
+
 import { useLoaderData } from "react-router-dom";
 
 
 const GameWishList = () => {
-    const Wishlist = useLoaderData();
+    const Wishlist=useLoaderData()
     return (
         <div className="my-10 space-y-10">
             {
