@@ -21,11 +21,21 @@ const Home = () => {
 
 
     return (
+
         <div className={theme === 'dark' ? 'dark bg-gray-900 text-white' : 'bg-white text-black'}>
-            <div className="flex justify-end p-4">
-                <button onClick={toggleTheme} className="px-4 py-2 bg-gray-800 text-white rounded dark:bg-gray-300 dark:text-black">
-                    {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-                </button>
+            <div className='flex justify-between items-center'>
+                <div className='flex gap-4'>
+                    <p>Home OverView</p>
+                    <p>#Banner</p>
+                    <p>#Highest_rated_Games</p>
+                    <p>#Most_Rated_Game_OverView</p>
+                    <p>#About_Our_Platform</p>
+                </div>
+                <div className="flex justify-end p-4">
+                    <button onClick={toggleTheme} className="px-4 py-2 bg-gray-800 text-white rounded dark:bg-gray-300 dark:text-black">
+                        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                    </button>
+                </div>
             </div>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
@@ -107,7 +117,7 @@ const Home = () => {
                 ⭐ Community Ratings – See how other gamers rate and review games before you decide to play. <br />
                 🔍 Easy Discovery – Find games based on genre, rating, and user recommendations. <br />
                 <Fade>
-                📝 Share Your Experience – Whether you're a casual player or a hardcore gamer, your voice matters!
+                    📝 Share Your Experience – Whether you're a casual player or a hardcore gamer, your voice matters!
                 </Fade>
                 <Typewriter words={['Join us in building a community-driven platform where every review helps shape a better gaming world!']}></Typewriter>
             </p>
