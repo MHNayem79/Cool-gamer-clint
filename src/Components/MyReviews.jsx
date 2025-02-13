@@ -1,8 +1,42 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyReviews = () => {
     const reviews = useLoaderData();
+
+    const handleDelete = _id => {
+        console.log(_id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                console.log("delete Confirm")
+
+                fetch(`http://localhost:5000/myReviews/${_id}`,{
+                    method:"DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your review has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div className="my-10 space-y-10">
             {
@@ -57,7 +91,7 @@ const MyReviews = () => {
                                     </td>
                                     <div className="join join-vertical">
                                         <button className="btn join-item">Update</button>
-                                        <button className="btn join-item">Delete</button>
+                                        <button onClick={() => handleDelete(singleWishlist._id)} className="btn join-item">Delete</button>
                                     </div>
                                 </tr>
 
