@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -20,8 +20,8 @@ const MyReviews = () => {
 
                 console.log("delete Confirm")
 
-                fetch(`http://localhost:5000/myReviews/${_id}`,{
-                    method:"DELETE"
+                fetch(`http://localhost:5000/myReviews/${_id}`, {
+                    method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -47,7 +47,6 @@ const MyReviews = () => {
                             <thead>
                                 <tr>
 
-                                    <th>Added By</th>
                                     <th>Rated by</th>
                                     <th>GameTitle & description</th>
                                     <th>Rating,Published,Genres</th>
@@ -57,10 +56,6 @@ const MyReviews = () => {
                             <tbody>
                                 {/* row 1 */}
                                 <tr>
-                                    <td>
-                                        <p>{singleWishlist.userName}</p>
-                                        <p>{singleWishlist.userEmail}</p>
-                                    </td>
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
@@ -90,8 +85,9 @@ const MyReviews = () => {
 
                                     </td>
                                     <div className="join join-vertical">
-                                        <button className="btn join-item">Update</button>
+                                        <Link to={`/updateReview/${singleWishlist._id}`}><button className="btn join-item">Update</button></Link>
                                         <button onClick={() => handleDelete(singleWishlist._id)} className="btn join-item">Delete</button>
+                                        
                                     </div>
                                 </tr>
 

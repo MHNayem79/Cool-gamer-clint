@@ -18,6 +18,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Details from './Components/Details.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Errortext from './Components/Errortext.jsx';
+import UpdateReview from './Components/UpdateReview.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         path: 'myReviews/:email',
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/myReviews/${params.email}`)
+      },
+      {
+        path: 'updateReview/:id',
+        element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/updateReview/${params.id}`)
       },
       {
         path: '/gameWishList/:userEmail',
