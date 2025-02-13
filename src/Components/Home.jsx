@@ -2,6 +2,8 @@ import banner1 from '../assets/The-Last-of-Us-Part-Two-Banner-1536x864.png'
 import banner2 from '../assets/Red-Dead-Redemption-2-PC-review-1024x576.jpg'
 import { NavLink, useLoaderData } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Typewriter } from 'react-simple-typewriter';
+import { Fade } from 'react-awesome-reveal';
 
 const Home = () => {
 
@@ -104,9 +106,10 @@ const Home = () => {
                 🎮 Authentic Game Reviews – Read and write comprehensive reviews on your favorite games. <br />
                 ⭐ Community Ratings – See how other gamers rate and review games before you decide to play. <br />
                 🔍 Easy Discovery – Find games based on genre, rating, and user recommendations. <br />
-                📝 Share Your Experience – Whether you're a casual player or a hardcore gamer, your voice matters! <br />
-
-                Join us in building a community-driven platform where every review helps shape a better gaming world!
+                <Fade>
+                📝 Share Your Experience – Whether you're a casual player or a hardcore gamer, your voice matters!
+                </Fade>
+                <Typewriter words={['Join us in building a community-driven platform where every review helps shape a better gaming world!']}></Typewriter>
             </p>
 
         </div>
